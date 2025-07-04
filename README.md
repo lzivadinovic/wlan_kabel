@@ -36,6 +36,13 @@ WLAN_Kabel has been tested on:
 -  ATH9K chipset with Ubuntu 10.10 
 -  Ralink RT2870 on a Raspberry Pi
 
+## Troubleshooting
+
+If you get something like `send: Message too long error #1` you need to disable `generic-receive-offload` on all interfaces (both wlan and ethernet)
+
+```bash
+sudo ethtool -K <interface> gro off
+```
 ## License
 
 You may use this code under the conditions of the GNU GPL v2 or later.
